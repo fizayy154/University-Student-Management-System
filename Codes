@@ -161,3 +161,34 @@ while True:
 
     else:
         print("Invalid Choice. Please try again.")
+
+#Challenge 01
+students ={}
+
+
+#Challenge 03
+def search_by_name():
+    name = input("Enter Student Name : ")
+
+    found = False
+
+    for student_id, s in students.items():
+        if s["name"].lower() == name.lower():
+            print("Student ID :", student_id)
+            print("Student Name :", s["name"])
+            print("Average Percentage :", format(s["average"], ".2f") + "%")
+            found = True
+
+    if found == False:
+        print("Student Record Not Found.")
+
+
+
+#Challenge 05
+confirm = input("Are you sure you want to delete this student? (Y/N) : ")
+
+if confirm == "Y" or confirm == "y":
+    del students[student_id]
+    print("Student Record Deleted Successfully.")
+else:
+    print("Delete Cancelled.")
